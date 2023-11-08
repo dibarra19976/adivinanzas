@@ -5,10 +5,26 @@ const questions = [
         "respuestaIncorrecta" : "Estados Unidos"
     },
     {
-        "pregunta" : "El primer astronauta que aterrizo en la luna fue...?",
+        "pregunta" : "El primer astronauta que aterrizo en la luna fue...",
         "respuestaCorrecta" : "Neil Amstrong",
         "respuestaIncorrecta" : "Louis Amstrong"
+    },
+    {
+        "pregunta" : "¿Como se llama la ultima consola de la compañia SEGA?",
+        "respuestaCorrecta" : "Dreamcast",
+        "respuestaIncorrecta" : "Saturn"
+    },
+    {
+        "pregunta" : "¿Cual es el primer juego de la saga 'Persona'?",
+        "respuestaCorrecta" : "Reveletions Persona",
+        "respuestaIncorrecta" : "Persona 3"
+    },
+    {
+        "pregunta" : "Xavier Foster le metio a ___ el solito",
+        "respuestaCorrecta" : "Hector Helio",
+        "respuestaIncorrecta" : "Dave Quagmire"
     }
+    
 ]
 
 let indicePreguntaActual = 0;
@@ -23,7 +39,7 @@ const btnReiniciar = document.getElementById("btnReiniciar");
 
 function mezclaRespuestas(correcta, incorrecta){
     const respuestas = [correcta, incorrecta];
-    respuestas.sort(() => Math.random() - 0,5);
+    respuestas.sort(() => Math.random() - 0.5);
     return respuestas;
 }
 
@@ -48,8 +64,8 @@ function mostrarPregunta(){
 
         btnIzquierda.style.display = "none";
         btnDerecho.style.display = "none";
-        btnReiniciar.style.display = "block";
-
+        btnReiniciar.style.display = "inline-block";
+        preguntaPropuesta.textContent = "";
     }
 
 }
@@ -85,3 +101,4 @@ btnReiniciar.addEventListener("click", () => {
 }); 
 
 mostrarPregunta();
+btnReiniciar.style.display = "none";
